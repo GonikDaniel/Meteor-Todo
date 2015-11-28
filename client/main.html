@@ -1,0 +1,22 @@
+<head>
+    <title>Todo app</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- Это часть установленных пакетов accounts-* -->
+                {{>loginButtons}}
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                {{>todoList}}
+            </div>
+        </div>
+    </div>
+</body>
