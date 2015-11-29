@@ -1,4 +1,8 @@
 <template name="todoList">
+    <label class="hide-completed checkbox-inline">
+        <input type="checkbox" checked="{{hideCompleted}}" />
+        Hide Completed Tasks
+    </label>
     <div id="todo-list">
         <div class="form-group">
             <input type="text" id="todo-input">

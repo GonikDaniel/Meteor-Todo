@@ -1,16 +1,24 @@
-
 Meteor.subscribe('todos');
 
 Template.todoList.helpers({
-    'todos': function() {
-        return Todos.find();
+    'todos': function () {
+        if (Session.get("hideCompleted")) {
+            // If hide completed is checked, filter tasks
+            return Todos.find({done: {$ne: true}}, {sort: {createdAt: -1}});
+        } else {
+            // Otherwise, return all of the tasks
+            return Todos.find();
+        }
+    },
+    hideCompleted: function () {
+        return Session.get("hideCompleted");
     }
 });
 
 Template.todoList.events({
     'keypress #todo-input': function(e, tmpl) {
         if (e.which === 13 && e.currentTarget.value !== '') {
-            if (Meteor.userId() && Todos.insert({"todo": e.currentTarget.value, "userId": Meteor.userId()})) {
+            if (Meteor.userId() && Todos.insert({"todo": e.currentTarget.value, "userId": Meteor.userId(), createdAt: new Date()})) {
                 e.currentTarget.value = '';
             } else {
                 e.currentTarget.value = '';
@@ -22,5 +30,8 @@ Template.todoList.events({
                 }, 2000);
             }
         }
+    },
+    "change .hide-completed input": function (event) {
+        Session.set("hideCompleted", event.target.checked);
     }
 });
