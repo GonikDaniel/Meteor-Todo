@@ -5,11 +5,12 @@
 
 What's done?
 
-- just a simple todo app - you can add and check items to your list (remove function will be added later)
-- also you will need to create your account and login before you go
+- just a simple todo app - you can add and check items to your list
+- you will need to create your account and login before you go
+- now you can remove it as well (but only your own tasks - available after you singup and login)
 
 
-You can see it working [here]() as well.
+You can see it working [here](http://igonik-todo.meteor.com) as well.
 
 ## Requirements ##
 
@@ -48,9 +49,14 @@ Please submit issues through the [issue tracker](https://github.com/GonikDaniel/
 
 ## History ##
 
-** Meteor-Todo 1.0 - 29/11/2015**
+** Meteor-Todo 1.0 - 28/11/2015**
 
 - basic app logic - add/check todo items and auth
+
+** Meteor-Todo 1.1 - 29/11/2015**
+
+- remove items feature
+- added link to demo
 
 ## Credits ##
 

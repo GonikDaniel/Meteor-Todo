@@ -1,5 +1,17 @@
 body {
     padding: 50px;
+    
+    .bg-danger {
+        display: none;
+        -webkit-transition: all 1s;
+        -moz-transition: all 1s;
+        -o-transition: all 1s;
+        -ms-transition: all 1s;
+        transition: all 1s;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
     #todo-list {
         font-size: 20px;
 
@@ -7,14 +19,31 @@ body {
             font-size: 24px;
             margin-bottom: 20px;
         }
+        a {
+            color: #62B3E1;
+        }
 
         li {
             margin: 10px 0;
+            width: 300px;
             a {
                 font-size: 18px;
                 &.checked {
                     color: #eee;
                     text-decoration: line-through;
+                }
+            }
+            .delete {
+                width: 30px;
+                margin-right: 20px;
+                background: #DF8026;
+                border: 1px solid #eee;
+                outline: none;
+                &:hover {
+                    & + a {
+                        color: rgba(0, 0, 0, .6);
+                    }
+                    background: none;
                 }
             }
         }
