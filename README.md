@@ -58,6 +58,7 @@ Please submit issues through the [issue tracker](https://github.com/GonikDaniel/
 - remove items feature
 - added link to demo
 - hide all feature
+- incompleted tasks feature
 
 ## Credits ##
 

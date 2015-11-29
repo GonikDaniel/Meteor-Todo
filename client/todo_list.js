@@ -12,6 +12,9 @@ Template.todoList.helpers({
     },
     hideCompleted: function () {
         return Session.get("hideCompleted");
+    },
+    incompleteCount: function () {
+        return Todos.find({done: {$ne: true}}).count();
     }
 });
 
